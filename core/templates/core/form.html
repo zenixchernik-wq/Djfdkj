@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h2>Dynamic Form</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <div id="inputs">
+        <input type="text" name="name" placeholder="Name">
+    </div>
+    <button type="button" id="add">Добавить поле</button>
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+$(document).ready(function(){
+    $("#add").click(function(){
+        $("#inputs").append('<input type="text" name="name" placeholder="Name">');
+    });
+});
+</script>
+
+</body>
+</html>

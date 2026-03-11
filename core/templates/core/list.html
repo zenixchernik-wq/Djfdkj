@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List</title>
+</head>
+<body>
+
+<h2>Submitted Data</h2>
+
+{% for item in items %}
+<div>
+    <b>ID:</b> {{ item.id }}
+    <ul>
+        {% for name in item.data.names %}
+        <li>{{ name }}</li>
+        {% endfor %}
+    </ul>
+</div>
+<hr>
+{% endfor %}
+
+</body>
+</html>
