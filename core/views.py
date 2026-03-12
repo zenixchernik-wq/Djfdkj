@@ -4,11 +4,10 @@ from .models import FormData
 
 def form_view(request):
     if request.method == "POST":
-        # Получаем все поля name
         inputs = request.POST.getlist("name")
         data = {"names": inputs}
         FormData.objects.create(data=data)
-        return redirect("list")  # после сохранения перенаправляем на список
+        return redirect("list")  
 
     form = DynamicForm()
     return render(request, "core/form.html", {"form": form})
